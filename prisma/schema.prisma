@@ -44,11 +44,11 @@ model User {
 
 model Order{
   id            String          @id @default(auto()) @map("_id") @db.ObjectId
-  userId        String
+  userId        String          @db.ObjectId
   amount        Float
   currency      String
   status        String
-  delveryStatus String?
+  deliveryStatus   String?
   createDate DateTime @default(now())
   paymentIntentId String @unique
   products  CartProductType[]
